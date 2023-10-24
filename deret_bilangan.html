@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deret Bilangan Ganjil</title>
+    <link rel="stylesheet" href="deret.css">
+</head>
+<body>
+    <h1>Deret Bilangan Ganjil</h1>
+    <label for="inputN">Masukkan nilai N:</label>
+    <input type="number" id="inputN">
+    <button onclick="generateOddNumbers()">Generate</button>
+    <p id="result"></p>
+
+    <script>
+        function generateOddNumbers() {
+            const inputN = parseInt(document.getElementById("inputN").value);
+
+            if (!isNaN(inputN)) {
+                const oddNumbers = [];
+                for (let i = 1; i <= inputN; i++) {
+                    if (i % 2 !== 0) {
+                        oddNumbers.push(i);
+                    }
+                }
+                document.getElementById("result").textContent = "Deret bilangan ganjil hingga " + inputN + " adalah: " + oddNumbers.join(" ");
+            } else {
+                document.getElementById("result").textContent = "Masukkan nilai N terlebih dahulu.";
+            }
+        }
+    </script>
+</body>
+</html>
